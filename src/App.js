@@ -10,10 +10,11 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { ReactComponent as Logo } from "./logo.svg";
+import SportCenterLogo from './sportcenterlogo.png';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+
 
 import './App.css';
 
@@ -65,11 +66,17 @@ function App() {
                 <Navbar expand="lg" className="bg-body-tertiary">
                   <Container>
                     <Navbar.Brand href="#home">
-                      <Logo alt="" width="30" height="30" className="d-inline-block align-top" />
-                      Administracion de Centros Deportivos
-                      <h6>Slogan goes here</h6>
+                      <div className="row">
+                        <div className="col-md-4">
+                          <img src={SportCenterLogo} className="img-fluid rounded-circle" width="70" height="70" />
+                        </div>
+                        <div className="col-md-8">
+                          Administración de Centros Deportivos
+                          <h6 className='fw-bold fst-italic' >Administración deportiva en manos expertas</h6>
+                        </div>
+                      </div>
                     </Navbar.Brand>
-                    <div className={loggedIn ? "" : "hidden"}>
+                    <div className={loggedIn ? "" : "hidden"} style={{marginLeft:"100px"}}>
                       <Navbar.Toggle aria-controls="basic-navbar-nav" />
                       <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
@@ -99,8 +106,8 @@ function App() {
                     placement="end">
                     <Offcanvas.Header closeButton>
                       <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                        <Logo alt="" width="30" height="30" className="d-inline-block align-top" />
-                        Administracion de Centros Deportivos
+                        <img src={SportCenterLogo} className="img-fluid rounded-circle" width="30" height="30" />
+                        Administración de Centros Deportivos
                       </Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
@@ -116,7 +123,7 @@ function App() {
                     </Offcanvas.Body>
                   </Navbar.Offcanvas>
                 </div>
-                
+
               </Container>
             </Navbar>
           ))}
