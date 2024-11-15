@@ -10,7 +10,7 @@ import {
 export default function Footer() {
   return (
     <MDBFooter className='text-center text-lg-left' >
-      <MDBContainer className='p-4 pb-0'>
+      {/* <MDBContainer className='p-4 pb-0'>
         <form action=''>
           <MDBRow className='d-flex justify-content-center'>
             <MDBCol size='auto' className='mb-4 mb-md-0'>
@@ -28,7 +28,7 @@ export default function Footer() {
             </MDBCol>
           </MDBRow>
         </form>
-      </MDBContainer>
+      </MDBContainer> */}
 
       <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
         &copy; {new Date().getFullYear()} Derechos:{' '}

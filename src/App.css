@@ -36,3 +36,58 @@
     transform: rotate(360deg);
   }
 }
+
+
+/*  Luis Ruiz */
+
+.hidden{
+  display: none;
+}
+
+.content{
+  width:1000px;
+  background-color: aqua;
+  margin:0 auto;
+}
+
+.header{
+  
+}
+
+.header-left{
+  float:left;
+  width:300px;
+}
+
+.header-center{
+  margin:0 auto;
+  width:400px;
+}
+
+.header-right{
+  float:right;
+  width:300px;
+}
+
+.header-clear{
+  clear:both;
+}
+
+.body{
+
+}
+
+.footer{
+
+}
+
+
+.usuarioEstado{
+  text-align: left;
+  color: white;
+}
+
+.usuarioImagen{
+  padding-top: 5px;
+  width: 55px;
+}
