@@ -1,86 +1,90 @@
-import React from 'react';
-import { useState } from 'react';
-import UsuarioEstado from './Components/security/UserState';
-import Login from './Components/security/Login';
+import React from "react";
+import { Routes, Route } from 'react-router-dom';
+import { useContext } from "react";
+import { UserContext } from "./Context/User";
+import AuthLayout from "./Auth/Auth";
+// import { useState } from 'react';
+// import UsuarioEstado from '/Components/security/UserState';
+import Login from './Login';
 import Home from './Components/pages/Home';
-import Footer from './Components/Footer';
+// import Footer from './Components/Footer';
 
-import RegistroUsuario from './Components/forms/RegistroUsuario';
+// import RegistroUsuario from './Components/forms/RegistroUsuario';
 import RegistroReserva from './Components/forms/RegistroReserva';
 import Calendarios from './Components/pages/Calendarios';
 import Reservas from './Components/pages/Reservas';
-import AcercaDe from './Components/pages/AcercaDe';
+// import AcercaDe from './Components/pages/AcercaDe';
 import Default from './Components/pages/Default';
 import Layout from './Components/pages/Layout';
-import Logins from './Components/pages/Home';
-import { Routes, Route, Link } from 'react-router-dom';
+// import Logins from './Components/pages/Home';
 
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-import SportCenterLogo from './sportcenterlogo.png';
+// import Container from 'react-bootstrap/Container';
+// import Nav from 'react-bootstrap/Nav';
+// import Navbar from 'react-bootstrap/Navbar';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
+// import Offcanvas from 'react-bootstrap/Offcanvas';
+// import SportCenterLogo from './sportcenterlogo.png';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import 'bootstrap/dist/js/bootstrap.bundle';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap-icons/font/bootstrap-icons.css';
+// import 'bootstrap/dist/js/bootstrap.bundle';
 
 import './App.css';
 
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [username, setUsername] = useState('');
-  const [usuarioImagen, setUsuarioImagen] = useState('');
-  const [usuarioRole, setUsuarioRole] = useState('');
+  // const [loggedIn, setLoggedIn] = useState(false);
+  // const [username, setUsername] = useState('');
+  // const [usuarioImagen, setUsuarioImagen] = useState('');
+  // const [usuarioRole, setUsuarioRole] = useState('');
 
-  const userChanged = (e) => {
-    let token = localStorage.getItem("token");
-    if (token != "") {
-      let user = localStorage.getItem("user");
-      user = JSON.parse(user);
-      setLoggedIn(true);
-      setUsername(user.firstName + " " + user.lastName);
-      setUsuarioImagen(user.image);
-      setUsuarioRole(user.role)
-    }
-    else {
-      setLoggedIn(false);
-      setUsername("");
-      setUsuarioImagen("");
-    }
-  };
+  // const userChanged = (e) => {
+  //   let token = localStorage.getItem("token");
+  //   if (token != "") {
+  //     let user = localStorage.getItem("user");
+  //     user = JSON.parse(user);
+  //     setLoggedIn(true);
+  //     setUsername(user.firstName + " " + user.lastName);
+  //     setUsuarioImagen(user.image);
+  //     setUsuarioRole(user.role)
+  //   }
+  //   else {
+  //     setLoggedIn(false);
+  //     setUsername("");
+  //     setUsuarioImagen("");
+  //   }
+  // };
 
-  const userLogout = (e) => {
-    setLoggedIn(false);
-    localStorage.setItem("token", "");
-    localStorage.setItem("user", "");
-    userChanged();
-  };
+  // const userLogout = (e) => {
+  //   setLoggedIn(false);
+  //   localStorage.setItem("token", "");
+  //   localStorage.setItem("user", "");
+  //   userChanged();
+  // };
 
-  const userLogin = (e) => {
-    setLoggedIn(true);
-    localStorage.setItem("token", "");
-    localStorage.setItem("user", "");
-  };
+  // const userLogin = (e) => {
+  //   setLoggedIn(true);
+  //   localStorage.setItem("token", "");
+  //   localStorage.setItem("user", "");
+  // };
 
+  const { user } = useContext(UserContext);
 
   return (
     <div id="MainContainer">
        <Routes>
         <Route path='/' element={<Layout />}>
-          <Route path='registroUsuario' element={<RegistroUsuario />} />
-          <Route path='registroreserva' element={<RegistroReserva />} />
-          <Route path='calendarios' element={<Calendarios />} />
-          <Route path='reservas' element={<Reservas />} />
-          <Route path='acercade' element={<AcercaDe />} />
-          <Route path='/' element={<Home />} />
+          <Route element={<AuthLayout authenticated={user} />}>
+            <Route path='registroreserva' element={<RegistroReserva />} />
+            <Route path='calendarios' element={<Calendarios />} />
+            <Route path='reservas' element={<Reservas />} />
+            <Route path='/' element={<Home />} />
+            <Route path='*' element={<Default />} />
+          </Route>
           <Route path='login' element={<Login />} />
-          <Route path='*' element={<Default />} />
         </Route>
       </Routes>
-     
+{/*      
       <React.Fragment>
         <>
           {[false].map((expand) => (
@@ -119,7 +123,7 @@ function App() {
 
                 <UsuarioEstado loggedIn={loggedIn} nombre={username} imagen={usuarioImagen} role={usuarioRole} handleLogout={userLogout} handleLogin={userLogin} />
 
-                {/* Toggle NavBar */}
+        
                 <div className={loggedIn ? "" : "hidden"}>
                   <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`}>
                     <i className="bi bi-list"></i>
@@ -160,7 +164,7 @@ function App() {
           </div>
         </main>
         <Footer />
-      </React.Fragment>
+      </React.Fragment> */}
 
     </div>
   );

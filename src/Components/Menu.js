@@ -1,11 +1,15 @@
-import { React, useState } from 'react';
+import { React, useState, useContext } from 'react';
+import { UserContext } from '../Context/User'
 import { Link } from 'react-router-dom';
 import SportCenterLogo from '../sportcenterlogo.png';
-import UsuarioEstado from '../Components/security/UserState';
-import Login from '../Components/security/Login';
+import UsuarioEstado from '../UserState';
+import Login from '../Login';
 import Home from '../Components/pages/Home';
 
 function Menu() {
+
+    const { user} = useContext(UserContext);
+
 
     const [loggedIn, setLoggedIn] = useState(false);
     const [username, setUsername] = useState('');
@@ -57,12 +61,8 @@ function Menu() {
                             </div>
                         </div>
                     </a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    {/* <div className={loggedIn ? "" : "hidden"} style={{ marginLeft: "100px" }}> */}
 
+<div className={user? "": "hidden"}>
                         <div className="collapse navbar-collapse" id="navbarNavDropdown" style={{ marginLeft: "100px" }}>
                             <ul className="navbar-nav">
                                 <li className="nav-item">
@@ -93,18 +93,12 @@ function Menu() {
 
                             </ul>
                         </div>
-
-                    {/* </div> */}
+</div>
                 </div>
             </nav>
 
+            <UsuarioEstado />
 
-            <UsuarioEstado loggedIn={loggedIn} nombre={username} imagen={usuarioImagen} role={usuarioRole} handleLogout={userLogout} handleLogin={userLogin} />
-
-            {/* <Login handleChange={userChanged} visible={!loggedIn} />
-            <div className={loggedIn ? "" : "hidden"}>
-                <Home />
-            </div> */}
         </div>
 
 
