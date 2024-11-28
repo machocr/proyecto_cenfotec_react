@@ -2,8 +2,18 @@ import React from 'react';
 import { useState } from 'react';
 import UsuarioEstado from './Components/security/UserState';
 import Login from './Components/security/Login';
-import Home from './Components/Home';
+import Home from './Components/pages/Home';
 import Footer from './Components/Footer';
+
+import RegistroUsuario from './Components/forms/RegistroUsuario';
+import RegistroReserva from './Components/forms/RegistroReserva';
+import Calendarios from './Components/pages/Calendarios';
+import Reservas from './Components/pages/Reservas';
+import AcercaDe from './Components/pages/AcercaDe';
+import Default from './Components/pages/Default';
+import Layout from './Components/pages/Layout';
+import Logins from './Components/pages/Home';
+import { Routes, Route, Link } from 'react-router-dom';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -14,7 +24,7 @@ import SportCenterLogo from './sportcenterlogo.png';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-
+import 'bootstrap/dist/js/bootstrap.bundle';
 
 import './App.css';
 
@@ -58,6 +68,19 @@ function App() {
 
   return (
     <div id="MainContainer">
+       <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route path='registroUsuario' element={<RegistroUsuario />} />
+          <Route path='registroreserva' element={<RegistroReserva />} />
+          <Route path='calendarios' element={<Calendarios />} />
+          <Route path='reservas' element={<Reservas />} />
+          <Route path='acercade' element={<AcercaDe />} />
+          <Route path='/' element={<Home />} />
+          <Route path='login' element={<Login />} />
+          <Route path='*' element={<Default />} />
+        </Route>
+      </Routes>
+     
       <React.Fragment>
         <>
           {[false].map((expand) => (
@@ -87,6 +110,7 @@ function App() {
                           </NavDropdown>
                           <Nav.Link href="#link">Calendarios</Nav.Link>
                           <Nav.Link href="#link">Reservas</Nav.Link>
+                        
                         </Nav>
                       </Navbar.Collapse>
                     </div>

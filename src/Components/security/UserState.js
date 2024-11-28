@@ -13,6 +13,8 @@ const UsuarioEstado = (props) => {
 
   const raiseLogout = () => {
     props.handleLogout();
+    localStorage.setItem("token", "");
+    localStorage.setItem("user", "");
   }
 
   const raiseLogin = () => {
