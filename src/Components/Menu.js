@@ -8,7 +8,7 @@ import Home from '../Components/pages/Home';
 
 function Menu() {
 
-    const { user} = useContext(UserContext);
+    const { user } = useContext(UserContext);
 
 
     const [loggedIn, setLoggedIn] = useState(false);
@@ -48,7 +48,7 @@ function Menu() {
 
     return (
         <div>
-            <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <nav className="navbar  navbar-expand-lg navbar-dark bg-dark">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#">
                         <div className="row">
@@ -61,9 +61,8 @@ function Menu() {
                             </div>
                         </div>
                     </a>
-
-<div className={user? "": "hidden"}>
-                        <div className="collapse navbar-collapse" id="navbarNavDropdown" style={{ marginLeft: "100px" }}>
+                    <div className={user ? "" : "hidden"}>
+                        <div className="collapse navbar-collapse" id="navbarNavDropdown">
                             <ul className="navbar-nav">
                                 <li className="nav-item">
                                     <Link className="nav-link active" aria-current="page" to='/'>Inicio</Link>
@@ -90,18 +89,14 @@ function Menu() {
                                 <li className="nav-item">
                                     <Link className="nav-link" to='acercade'>Acerca de...</Link>
                                 </li>
-
                             </ul>
+
                         </div>
-</div>
+                    </div>
+                    <UsuarioEstado />
                 </div>
             </nav>
-
-            <UsuarioEstado />
-
         </div>
-
-
     )
 }
 

@@ -13,8 +13,8 @@ const Login = () => {
     login();
   }
 
-  if(user) {
-      navigate('/')
+  if (user) {
+    navigate('/')
   };
 
   const login = async () => {
@@ -60,31 +60,26 @@ const Login = () => {
 
   return (
     <div className={'mainContainer'}>
-      <div className={'titleContainer'}>
-        <div>Login</div>
-      </div>
-      <br />
-      <div className={'inputContainer'}>
-        <input
-          value={username}
-          placeholder="Enter your email here"
-          onChange={(ev) => setUsername(ev.target.value)}
-          className={'inputBox'}
-        />
-      </div>
-      <br />
-      <div className={'inputContainer'}>
-        <input
-          value={password}
-          placeholder="Enter your password here"
-          onChange={(ev) => setPassword(ev.target.value)}
-          className={'inputBox'}
-        />
-      </div>
-      <br />
-      <div className={'inputContainer'}>
-        <input className={'inputButton'} type="button" onClick={onButtonClick} value={'Log in'} />
-        <p className={loginError == ""? "hidden" : ""}><label className="errorLabel">{loginError}</label></p>
+      <div className="container" style={{ width: '450px', border: '1px solid #ccc', borderRadius: '5px', marginTop: '30px' }}>
+        <div className={'titleContainer'} style={{ marginBottom: '30px' }}>
+          <div><h2>Login</h2></div>
+        </div>
+        <div className={'inputContainer'}>
+          <label htmlFor="uname"><b>Usuario</b></label>
+          <input className={'inputBox'} value={username} type="text" placeholder="Enter your email here" name="uname" required style={{ borderRadius: '5px' }}
+            onChange={(ev) => setUsername(ev.target.value)} />
+        </div>
+
+        <div className={'inputContainer'}>
+          <label htmlFor="psw"><b>Password</b></label>
+          <input className={'inputBox'} value={password} type="password" placeholder="Enter your password here" name="psw" required style={{ borderRadius: '5px' }}
+            onChange={(ev) => setPassword(ev.target.value)} />
+        </div>
+
+        <div className={'inputContainer'}>
+          <input className='loginButton' type="submit" onClick={onButtonClick} value={'Log in'} />
+          <p className={loginError == "" ? "hidden" : ""}><label className="errorLabel">{loginError}</label></p>
+        </div>
       </div>
     </div>
   )
