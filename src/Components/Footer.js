@@ -1,16 +1,15 @@
-import {
-  MDBFooter
-} from 'mdb-react-ui-kit';
 
 export default function Footer() {
   return (
-    <MDBFooter className='text-center text-lg-left' >
-      <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-        &copy; {new Date().getFullYear()} Derechos:{' '}
-        <a className='text-dark' href='#'>
-          admin_centros_dptos@test.com
-        </a>
+    <footer className="footer fixed-bottom bg-dark" style={{ backgroundColor: '#727986', color: 'white', fontWeight: 'bold',  }}>
+      <div className="text-center">
+        <div className='text-center p-3' >
+          &copy; {new Date().getFullYear()} Derechos:{' '}
+          <a style={{ color: 'white', fontWeight: 'bold' }} href='#'>
+            admin_centros_dptos@test.com
+          </a>
+        </div>
       </div>
-    </MDBFooter>
+    </footer>
   );
 }

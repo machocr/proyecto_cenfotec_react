@@ -32,62 +32,81 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-
-/*  Luis Ruiz */
-
-.hidden{
+.hidden {
   display: none;
 }
 
-.content{
-  width:1000px;
-  background-color: aqua;
-  margin:0 auto;
-}
-
-.header{
-  
-}
-
-.header-left{
-  float:left;
-  width:300px;
-}
-
-.header-center{
-  margin:0 auto;
-  width:400px;
-}
-
-.header-right{
-  float:right;
-  width:300px;
-}
-
-.header-clear{
-  clear:both;
-}
-
-.body{
-
-}
-
-.footer{
-
-}
-
-
-.usuarioEstado{
+.usuarioEstado {
   text-align: left;
   color: white;
 }
 
-.usuarioImagen{
-  padding-top: 5px;
-  width: 55px;
+.usuarioImagen {
+  margin-right: 20px;
+  width: 60px;
+  height: 50px; 
 }
+
+/*  Login form style  */
+/* Bordered form */
+form {
+  border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text],
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.loginButton {
+  background-color: #344740;
+  color: white;
+  height: 40px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+.loginButton:hover {
+  opacity: 0.8;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 10px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+
+  .cancelbtn {
+    width: 100%;
+  }
+}
+/* End Of Login form style */
