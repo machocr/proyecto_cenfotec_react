@@ -21,13 +21,12 @@ const UsuarioEstado = () => {
               </td>
               <td>
                 <div>
-                  <div>Bienvenido {userData ? userData.firstName + " " + userData.lastName : ""}</div>
+                  <div>Bienvenid@ {userData ? userData.firstName + " " + userData.lastName : ""}</div>
                 </div>
-                <div>          
+                <div>   
                   <input className={'inputButton loginButton'} type="button" onClick={onButtonClick} value={"Log Out"} 
-                  style={{width: '40%', height: '30px'}} />
-                  <span> [{userData ? userData.role : ""}]</span>
-                 
+                  style={{width: '50%', height: '30px', padding:'0'}} />   
+                  <span> [{userData ? userData.role : ""}]</span>                
                 </div>
               </td>
             </tr>

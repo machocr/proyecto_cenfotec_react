@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { UserContext } from '../../Context/User'
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -33,9 +33,12 @@ const Login = () => {
     login();
   }
 
-  if (user) {
-    navigate('/')
-  };
+  useEffect(()=>{
+    if (user) {
+      navigate('Home')
+    };
+  },[user]) 
+
 
   const login = async () => {
     fetch('https://dummyjson.com/user/login', {
@@ -47,9 +50,9 @@ const Login = () => {
       }),
     })
       .then(response => {
-        if (!response.ok) {
-          throw new Error('Server returned ' + response.status);
-        }
+        // if (!response.ok) {
+        //   throw new Error('Server returned ' + response.status);
+        // }
         return response.json();
       })
       .then(json => {
@@ -72,9 +75,9 @@ const Login = () => {
   const getUser = (id) => {
     fetch('https://dummyjson.com/users/' + id)
     .then(response => {
-      if (!response.ok) {
-        throw new Error('Server returned ' + response.status);
-      }
+      // if (!response.ok) {
+      //   throw new Error('Server returned ' + response.status);
+      // }
       return response.json();
     })
     .then(json => {
@@ -101,13 +104,13 @@ const Login = () => {
           <div><h2>Login</h2></div>
         </div>
         <div className={'inputContainer'}>
-          <label htmlFor="uname"><b>Usuario</b></label>
-          <input className={'inputBox'} type="text" name="username" style={{ borderRadius: '5px' }}
+          <b>Usuario</b>
+          <input className={'inputBox'} type="text" name="username" style={{ borderRadius: '5px' }} autoComplete='on'
             value={valores.username} {...register("username", { required: true, maxLength: 20, onChange: handleInputChange })} />
         </div>
 
         <div className={'inputContainer'}>
-          <label htmlFor="psw"><b>Password</b></label>
+          <b>Password</b>
           <input className={'inputBox'} type="password" name="password" style={{ borderRadius: '5px' }}
             value={valores.password} {...register("password", { required: true, maxLength: 20, onChange: handleInputChange })} />
         </div>
