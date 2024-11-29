@@ -1,5 +1,7 @@
+import React from "react";
+
 const MostrarReservas = () => {
-    const reservas = JSON.parse(localStorage.getItem("reservas")) || [];
+    const reservas = JSON.parse(localStorage.getItem("reservasCanchas")) || [];
 
     return (
         <div>
@@ -16,3 +18,5 @@ const MostrarReservas = () => {
         </div>
     );
 };
+
+export default MostrarReservas;
