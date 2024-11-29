@@ -6,9 +6,10 @@ import AuthLayout from "./Auth/Auth";
 
 import Login from './Login';
 import Home from './Components/pages/Home';
-import RegistroReserva from './Components/forms/RegistroReserva';
+import ReservaCanchas from './Components/forms/ReservaCanchas';
+import RegistroUsuario from './Components/forms/RegistroUsuario';
 import Calendarios from './Components/pages/Calendarios';
-import Reservas from './Components/pages/Reservas';
+import MostrarReservas from './Components/forms/MostrarReservas';
 // import AcercaDe from './Components/pages/AcercaDe';
 import Default from './Components/pages/Default';
 import Layout from './Components/pages/Layout';
@@ -25,12 +26,13 @@ function App() {
 
   return (
     <div id="MainContainer">
-       <Routes>
+      <Routes>
         <Route path='/' element={<Layout />}>
           <Route element={<AuthLayout authenticated={user} />}>
-            <Route path='registroreserva' element={<RegistroReserva />} />
+            <Route path='registroUsuario' element={<RegistroUsuario />} />
+            <Route path='reservaCanchas' element={<ReservaCanchas />} />
             <Route path='calendarios' element={<Calendarios />} />
-            <Route path='reservas' element={<Reservas />} />
+            <Route path='mostrarReservas' element={<MostrarReservas />} />
             <Route path='/' element={<Home />} />
             <Route path='*' element={<Default />} />
           </Route>

@@ -26,7 +26,7 @@ const UsuarioEstado = () => {
                 </div>
                 <div>
                   <input className={'inputButton loginButton'} type="button" onClick={onButtonClick} value={"Log Out"} 
-                  style={{width: '70%', height: '30px'}} />
+                  style={{width: '70%', height: '35px' }} />
                  
                 </div>
               </td>
