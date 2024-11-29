@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { UserContext } from "./Context/User";
 import AuthLayout from "./Auth/Auth";
 
-import Login from './Login';
+import Login from './Components/pages/Login';
 import Home from './Components/pages/Home';
 import RegistroReserva from './Components/forms/RegistroReserva';
 import Calendarios from './Components/pages/Calendarios';

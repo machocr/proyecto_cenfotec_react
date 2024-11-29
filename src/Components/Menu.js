@@ -2,9 +2,7 @@ import { React, useState, useContext } from 'react';
 import { UserContext } from '../Context/User'
 import { Link } from 'react-router-dom';
 import SportCenterLogo from '../sportcenterlogo.png';
-import UsuarioEstado from '../UserState';
-import Login from '../Login';
-import Home from '../Components/pages/Home';
+import UsuarioEstado from './security/UserState';
 
 function Menu() {
 
