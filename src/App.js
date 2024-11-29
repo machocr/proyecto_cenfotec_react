@@ -4,6 +4,7 @@ import UsuarioEstado from './Components/security/UserState';
 import Login from './Components/security/Login';
 import Home from './Components/Home';
 import Footer from './Components/Footer';
+import ReservaCanchas from './Components/FormReservaCancha/ReservaCanchas';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -76,7 +77,7 @@ function App() {
                         </div>
                       </div>
                     </Navbar.Brand>
-                    <div className={loggedIn ? "" : "hidden"} style={{marginLeft:"100px"}}>
+                    <div className={loggedIn ? "" : "hidden"} style={{ marginLeft: "100px" }}>
                       <Navbar.Toggle aria-controls="basic-navbar-nav" />
                       <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
@@ -131,6 +132,7 @@ function App() {
 
         <main >
           <Login handleChange={userChanged} visible={!loggedIn} />
+
           <div className={loggedIn ? "" : "hidden"}>
             <Home />
           </div>
