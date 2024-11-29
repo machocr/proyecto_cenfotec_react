@@ -5,6 +5,7 @@ import Login from './Components/security/Login';
 import Home from './Components/Home';
 import Footer from './Components/Footer';
 import ReservaCanchas from './Components/FormReservaCancha/ReservaCanchas';
+import MostrarReservas from './Components/FormReservaCancha/MostrarReservas';
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
