@@ -56,7 +56,10 @@
 /*  Login form style  */
 /* Bordered form */
 form {
-  border: 3px solid #f1f1f1;
+}
+
+.errorSummary{
+ color: red;
 }
 
 /* Full-width inputs */
