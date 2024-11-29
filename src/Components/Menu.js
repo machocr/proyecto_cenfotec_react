@@ -69,14 +69,15 @@ function Menu() {
                                 </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Registros
+                                        Auto Gestion
                                     </a>
                                     <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                         <li>
-                                            <Link className="dropdown-item" to='registroUsuario'>Usuarios</Link>
+                                            <Link className="dropdown-item" to='registroUsuario'>Registro de Usuarios</Link>
                                         </li>
+                                        <li><hr className='downdown-divider'/></li>
                                         <li>
-                                            <Link className="dropdown-item" to='registroreserva'>Reservas</Link>
+                                            <Link className="dropdown-item" to='reservaCanchas'>Reservas de Canchas</Link>
                                         </li>
                                     </ul>
                                 </li>
@@ -84,7 +85,7 @@ function Menu() {
                                     <Link className="nav-link" to='calendarios'>Calendarios</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to='reservas'>Ver Reservas</Link>
+                                    <Link className="nav-link" to='mostrarReservas'>Mostrar Reservas</Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link" to='acercade'>Acerca de...</Link>
